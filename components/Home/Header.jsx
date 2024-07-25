@@ -71,6 +71,7 @@ export default function Header() {
           style={{
             fontFamily: "outfit",
             fontSize: 16,
+            color:Colors.GRAY
           }}
         />
       </View>

@@ -14,7 +14,7 @@ export default function Slider() {
     const querySnapshot = await getDocs(q);
 
     querySnapshot.forEach((doc)=>{
-        console.log(doc.data());
+        
         setSliderList(prev=>[...prev,doc.data()]);
     })
   };
