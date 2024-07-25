@@ -2,8 +2,33 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
 import { TouchableOpacity } from "react-native";
+import { useWarmUpBrowser } from "./../hooks/useWarmUpBrowser";
+import * as WebBrowser from "expo-web-browser";
+import { useOAuth } from "@clerk/clerk-expo";
+import * as Linking from "expo-linking"
+
+WebBrowser.maybeCompleteAuthSession();
 
 const LoginScreen = () => {
+  useWarmUpBrowser();
+
+
+  const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });
+
+  const onPress = React.useCallback(async () => {
+    try {
+      const { createdSessionId, signIn, signUp, setActive } =
+        await startOAuthFlow({ redirectUrl: Linking.createURL("/dashboard", { scheme: "myapp" })});
+
+      if (createdSessionId) {
+        setActive({ session: createdSessionId });
+      } else {
+        // Use signIn or signUp for next steps such as MFA
+      }
+    } catch (err) {
+      console.error("OAuth error", err);
+    }
+  }, []);
   return (
     <View>
       <View
@@ -43,25 +68,29 @@ const LoginScreen = () => {
           App
         </Text>
         <Text
-        style={{
-            fontSize:15,
-            fontFamily:'outfit',
-            textAlign:'center',
-            marginVertical:15,
-            color:Colors.GRAY
-        }}
+          style={{
+            fontSize: 15,
+            fontFamily: "outfit",
+            textAlign: "center",
+            marginVertical: 15,
+            color: Colors.GRAY,
+          }}
         >
           Find your favorite business near your and post your own business to
           your community
         </Text>
-        <TouchableOpacity style={styles.btn}>
-            <Text
+        <TouchableOpacity style={styles.btn}
+        onPress={onPress}
+        >
+          <Text
             style={{
-                textAlign:'center',
-                color:"#fff",
-                fontFamily:'outfit-bold'
+              textAlign: "center",
+              color: "#fff",
+              fontFamily: "outfit-bold",
             }}
-            >Let's Get Started</Text>
+          >
+            Let's Get Started
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -73,13 +102,12 @@ const styles = StyleSheet.create({
     padding: 20,
     marginTop: -20,
   },
-  btn:{
-    backgroundColor:Colors.PRIMARY,
-    padding:16,
-    borderRadius:99,
-    marginTop:20
-
-  }
+  btn: {
+    backgroundColor: Colors.PRIMARY,
+    padding: 16,
+    borderRadius: 99,
+    marginTop: 20,
+  },
 });
 
 export default LoginScreen;
