@@ -1,10 +1,18 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import Header from '../../components/Home/Header'
 
 const home = () => {
   return (
     <View>
-      <Text style={{fontSize:40,fontFamily:'outfit-bold'}}>home</Text>
+      {/* Header */}
+      <Header/>
+
+      {/* Slider */}
+
+      {/* Category */}
+
+      {/* Popular Buisness List  */}
     </View>
   )
 }
