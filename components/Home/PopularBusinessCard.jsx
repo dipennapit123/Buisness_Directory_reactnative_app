@@ -22,7 +22,7 @@ export default function PopularBusinessCard({ business }) {
       <View
         style={{
           marginTop: 7,
-          gap:5
+          gap: 5,
         }}
       >
         <Text
@@ -37,7 +37,7 @@ export default function PopularBusinessCard({ business }) {
           style={{
             fontFamily: "outfit",
             fontSize: 13,
-            color:Colors.GRAY
+            color: Colors.GRAY,
           }}
         >
           {business.address}
@@ -45,14 +45,40 @@ export default function PopularBusinessCard({ business }) {
         <View style={{
             display:'flex',
             flexDirection:'row',
-            // justifyContent:'space-between',
-            gap:5
+            justifyContent:'space-between'
         }}>
-            <Image style={{width:15,height:15}} source={require('./../../assets/images/star.png')}/>
-            <Text style={{
-                fontFamily:'outfit'
-            }}>4.5</Text>
-        </View>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              // justifyContent:'space-between',
+            }}
+          >
+            <Image
+              style={{ width: 15, height: 15 }}
+              source={require("./../../assets/images/star.png")}
+            />
+            <Text
+              style={{
+                fontFamily: "outfit",
+              }}
+            >
+              4.5
+            </Text>
+          </View>
+          <Text
+            style={{
+              fontFamily: "outfit",
+              backgroundColor: Colors.PRIMARY,
+              color: "#fff",
+              padding: 3,
+              fontSize: 10,
+              borderRadius:5
+            }}
+            >
+            {business.Category}
+          </Text>
+            </View>
       </View>
     </View>
   );
