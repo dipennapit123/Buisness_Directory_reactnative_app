@@ -6,9 +6,9 @@ import { db } from "../../config/FirebaseConfig";
 import CategoryItem from "./CategoryItem";
 import { useRouter } from "expo-router";
 
-export default function Category() {
+export default function Category({ explore = false ,onCategorySelect}) {
   const [categoryList, setCategoryList] = useState([]);
-  const router=useRouter();
+  const router = useRouter();
 
   useEffect(() => {
     getCategoryList();
@@ -19,40 +19,50 @@ export default function Category() {
     const q = query(collection(db, "Category"));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
-      
-      setCategoryList(prev => [...prev, doc.data()]);
+      setCategoryList((prev) => [...prev, doc.data()]);
     });
   };
+  const onCategoryPressHandler=(item)=>{
+    if(!explore){
+      router.push("/businesslist/" + item?.name)
+    }
+    else{
+      onCategorySelect(item?.name)
+
+    }
+  }
 
   return (
     <View>
-      <View
-        style={{
-          padding: 20,
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          marginTop: 10,
-        }}
-      >
-        <Text
+      {!explore && (
+        <View
           style={{
-            marginLeft: 20,
-            fontSize: 20,
-            fontFamily: "outfit-bold",
+            padding: 20,
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            marginTop: 10,
           }}
         >
-          Category
-        </Text>
-        <Text
-          style={{
-            color: Colors.PRIMARY,
-            fontFamily: "outfit-medium",
-          }}
-        >
-          View All
-        </Text>
-      </View>
+          <Text
+            style={{
+              marginLeft: 20,
+              fontSize: 20,
+              fontFamily: "outfit-bold",
+            }}
+          >
+            Category
+          </Text>
+          <Text
+            style={{
+              color: Colors.PRIMARY,
+              fontFamily: "outfit-medium",
+            }}
+          >
+            View All
+          </Text>
+        </View>
+      )}
       <FlatList
         data={categoryList}
         horizontal={true}
@@ -64,7 +74,9 @@ export default function Category() {
           <CategoryItem
             category={item}
             key={index}
-            onCategoryPress={(category) => router.push('/businesslist/'+item.name)}
+            onCategoryPress={(category) =>
+              onCategoryPressHandler(item)
+            }
           />
         )}
       />

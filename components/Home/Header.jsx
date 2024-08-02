@@ -2,7 +2,7 @@ import { View, Text, Image, TextInput } from "react-native";
 import React from "react";
 import { useUser } from "@clerk/clerk-expo";
 import { Colors } from "./../../constants/Colors";
-import { Feather } from "@expo/vector-icons";
+import {  Ionicons } from "@expo/vector-icons";
 
 export default function Header() {
   const { user } = useUser();
@@ -63,15 +63,17 @@ export default function Header() {
           marginVertical: 10,
           marginTop: 15,
           borderRadius: 8,
+          borderWidth:1,
+          borderColor:Colors.PRIMARY
         }}
       >
-        <Feather name="search" size={24} color={Colors.PRIMARY} />
+        <Ionicons name="search" size={24} color={Colors.PRIMARY} />
         <TextInput
           placeholder="Search......."
           style={{
             fontFamily: "outfit",
             fontSize: 16,
-            color:Colors.GRAY
+            color:Colors.PRIMARY
           }}
         />
       </View>
