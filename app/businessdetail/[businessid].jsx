@@ -5,6 +5,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/FirebaseConfig';
 import { Colors } from '../../constants/Colors';
 import Intro from '../../components/BusinessDetail/Intro';
+import ActionButton from '../../components/BusinessDetail/ActionButton';
 
 export default function BusinessDetail() {
     const {businessid}=useLocalSearchParams();
@@ -45,6 +46,7 @@ export default function BusinessDetail() {
            <Intro business={business}/>
 
             {/* Action Buttons */}
+            <ActionButton business={business}/>
 
             {/* About Section */}
 

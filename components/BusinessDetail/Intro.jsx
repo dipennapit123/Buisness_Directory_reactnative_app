@@ -45,11 +45,11 @@ export default function Intro({ business }) {
         <Text style={{
           fontSize:26,
           fontFamily:'outfit-bold'
-        }}>{business.name}</Text>
+        }}>{business?.name}</Text>
         <Text style={{
           fontFamily:'outfit',
           fontSize:18
-        }}>{business.address}</Text>
+        }}>{business?.address}</Text>
       </View>
     </View>
   );
