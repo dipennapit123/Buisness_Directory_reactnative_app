@@ -31,8 +31,13 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 ## Profile tab
 4. <img width="250" height="500" src="https://github.com/user-attachments/assets/d6ff0997-14ed-4a7c-a69a-4b79c0703d1d">
 
-## Adding Business form through Profile tab
+## Adding Business form through Profile ta
+
 5. <img width="250" height="500" src="https://github.com/user-attachments/assets/d6ff0997-14ed-4a7c-a69a-4b79c0703d1d">
+
+5. <img width="250" height="500" src="https://github.com/user-attachments/assets/af907942-7083-4006-a865-6cf4a54d952d">
+
+
 
 ## My Business Tab
 6. <img width="250" height="500" src="https://github.com/user-attachments/assets/7e0a8107-8228-43f6-8a70-7f60d6cbfc1b">
