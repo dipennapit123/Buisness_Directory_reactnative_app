@@ -26,11 +26,10 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 3. <img width="250" height="500" src="https://github.com/user-attachments/assets/0bdfb86b-d7bd-4df9-875e-8d0684531921">
 
 ## Explore tab
-4. <img width="250" height="500" src="https://github.com/use![Uploading simulator_screenshot_106C6232-63CF-4C6C-8A29-AAFD1F676AC2.png…]()
-r-attachments/assets/77631991-ccc0-4208-b1fd-1917b757db4f">
+4. <img width="250" height="500" src="https://github.com/user-attachments/assets/77631991-ccc0-4208-b1fd-1917b757db4f">
 
 ## Profile tab
-4. <img width="3250" height="500" src="https://github.com/user-attachments/assets/d6ff0997-14ed-4a7c-a69a-4b79c0703d1d">
+4. <img width="250" height="500" src="https://github.com/user-attachments/assets/d6ff0997-14ed-4a7c-a69a-4b79c0703d1d">
 
 ## Adding Business form through Profile tab
 5. <img width="250" height="500" src="https://github.com/user-attachments/assets/d6ff0997-14ed-4a7c-a69a-4b79c0703d1d">
