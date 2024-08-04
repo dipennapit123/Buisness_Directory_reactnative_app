@@ -17,7 +17,7 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    ```
 
 ## Login Page with Google Authentication
-1. <img width="200" height="200" src="https://github.com/user-attachments/assets/fe4d0d4e-cc26-4972-955c-3eaf774214a2">
+1. <img width="200" height="800" src="https://github.com/user-attachments/assets/fe4d0d4e-cc26-4972-955c-3eaf774214a2">
 
-2. <img width="200" height="200" src="https://github.com/user-attachments/assets/3ebd40f7-a873-4fe6-8c65-2c5d7caa81cf">
+2. <img width="200" height="800" src="https://github.com/user-attachments/assets/3ebd40f7-a873-4fe6-8c65-2c5d7caa81cf">
 
